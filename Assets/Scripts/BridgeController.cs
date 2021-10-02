@@ -36,7 +36,7 @@ public class BridgeController : MonoBehaviour
         PlayerLagGhost ghost = other.GetComponent<PlayerLagGhost>();
         if (ghost)
         {
-            GameManager.Instance.Respawn();
+            GameManager.Instance.Die();
         }
     }
 }

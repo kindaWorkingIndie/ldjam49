@@ -54,7 +54,10 @@ public class GameManager : MonoBehaviour
         Gizmos.DrawSphere(spawnPosition, 0.5f);
     }
 
-
+    public void Die()
+    {
+        Respawn();
+    }
     public void Respawn()
     {
         ghost.transform.position = spawnPosition;

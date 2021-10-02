@@ -43,7 +43,6 @@ public class PingController : MonoBehaviour
         pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
         pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
         realtimePing = lag.delay;
-
     }
 
     void Update()
