@@ -27,7 +27,6 @@ public class PlayerLagGhost : MonoBehaviour
     {
         lagDelay -= Time.deltaTime;
         interval = (interval - 1) % 30;
-        Debug.Log(lagDelay);
         if(lagDelay < 0)
         {
             lagDelay = pingController.lag.delay / 1000; // Dirty seconds to ms convertion
