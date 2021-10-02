@@ -74,5 +74,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = moveInput * walkSpeed;
+
+        GhostCommand cmd = new GhostCommand();
+        cmd.move = rb.position;
+        SendGhostInformation(cmd);
+    }
+
+    void SendGhostInformation(GhostCommand cmd)
+    {
+        ghost.PushCommand(cmd);
     }
 }
