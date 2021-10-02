@@ -52,7 +52,7 @@ public class PlayerLagGhost : MonoBehaviour
             animator.SetBool("moving", commandQueue.Count != 0);
         }
 
-        if(commandQueue.Count != 0 && interval == 0 && executeCommands)
+        if (commandQueue.Count != 0 && interval == 0 && executeCommands)
         {
             commandQueue.Dequeue();
         }
@@ -66,7 +66,7 @@ public class PlayerLagGhost : MonoBehaviour
             GameManager.Instance.Die();
         }
 
-        if(coll.gameObject.CompareTag("BugWall") && pingController.lag.isBuggy)
+        if (coll.gameObject.CompareTag("BugWall") && pingController.lag.isBuggy)
         {
             BugThrough(coll);
         }
@@ -87,13 +87,13 @@ public class PlayerLagGhost : MonoBehaviour
             Debug.Log(Input.GetAxisRaw("Vertical"));
             ++bugCounter;
 
-            Vector3 dir = new Vector3(Input.GetAxisRaw("Horizontal") * (2 * wall.bounds.size.x),
-                                        Input.GetAxisRaw("Vertical") * (2 * wall.bounds.size.y),
+            Vector3 dir = new Vector3(Input.GetAxisRaw("Horizontal") * (1.5f * wall.bounds.size.x),
+                                        Input.GetAxisRaw("Vertical") * (1.5f * wall.bounds.size.y),
                                         0);
             Vector3 newPos = transform.position + dir;
             rb.MovePosition(newPos);
 
-            if(bugCounter >= neededBugs)
+            if (bugCounter >= neededBugs)
             {
                 GameManager.Instance.SnapPlayerToGhost(newPos);
                 commandQueue.Clear();
