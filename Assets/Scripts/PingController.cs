@@ -21,6 +21,7 @@ public class PingController : MonoBehaviour
     }
 
     public PingLevel lag { get { return pingQueue[0]; } }
+    public PingLevel nextLag { get { return pingQueue.Count >= 2 ? pingQueue[1] : null; } }
 
     void Awake()
     {
@@ -47,7 +48,6 @@ public class PingController : MonoBehaviour
 
     void ChangeLagLevel()
     {
-
         pingQueue.RemoveAt(0);
         pingQueue.Add(pingLevels[Random.Range(0, pingLevels.Length)]);
     }
