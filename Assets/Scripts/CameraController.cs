@@ -7,15 +7,20 @@ public class CameraController : MonoBehaviour
     public Transform target;
     public float smoothSpeed = 0.075f;
     public bool isFollowingTarget = true;
-    // Start is called before the first frame update
+
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
+
     void FixedUpdate()
     {
+        if (!target) return;
         if (!isFollowingTarget) return;
         Vector2 targetPosition = target.position;
         Vector2 smoothedPosition = Vector2.Lerp(transform.position, targetPosition, smoothSpeed);
