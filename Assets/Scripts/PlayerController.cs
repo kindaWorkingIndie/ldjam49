@@ -12,6 +12,14 @@ public class PlayerController : MonoBehaviour
 
     public PlayerLagGhost ghost;
 
+    private enum moveDirection {
+        none,
+        vertical,
+        horizontal
+    }
+
+    private moveDirection lastMoveDir = moveDirection.none;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -26,14 +34,36 @@ public class PlayerController : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical");
-        if (x != 0)
+
+        switch(lastMoveDir)
         {
-            y = 0;
+            case moveDirection.horizontal:
+                if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+                {
+                    lastMoveDir = moveDirection.vertical;
+                }
+                break;
+            case moveDirection.vertical:
+                if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                {
+                    lastMoveDir = moveDirection.horizontal;
+                }
+                break;
+            default:
+                if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+                {
+                    lastMoveDir = moveDirection.vertical;
+                }
+                else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D))
+                {
+                    lastMoveDir = moveDirection.horizontal;
+                }
+                break;
         }
-        else if (y != 0)
-        {
-            x = 0;
-        }
+
+        x = lastMoveDir == moveDirection.horizontal ? x : 0;
+        y = lastMoveDir == moveDirection.vertical ? y : 0;
+
         moveInput = new Vector2(x, y);
     }
 
