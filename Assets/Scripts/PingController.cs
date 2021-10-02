@@ -1,12 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PingController : MonoBehaviour
 {
 
-    public int[] pingLevels;
-    public int currentPingLevel = 0;
+    public PingLevel[] pingLevels;
+
+    public List<PingLevel> pingQueue;
 
     public float pingChangeInterval = 5; // Seconds
     public float pingChangeIntervalStore;
@@ -21,6 +20,8 @@ public class PingController : MonoBehaviour
         }
     }
 
+    public PingLevel lag { get { return pingQueue[0]; } }
+
     void Awake()
     {
         _instance = this;
@@ -29,6 +30,9 @@ public class PingController : MonoBehaviour
     void Start()
     {
         pingChangeIntervalStore = pingChangeInterval;
+        pingQueue = new List<PingLevel>();
+        pingQueue.Add(pingLevels[Random.Range(0, pingLevels.Length)]);
+        pingQueue.Add(pingLevels[Random.Range(0, pingLevels.Length)]);
     }
 
     void Update()
@@ -37,14 +41,14 @@ public class PingController : MonoBehaviour
         if (pingChangeInterval < 0)
         {
             pingChangeInterval = pingChangeIntervalStore;
-            // Change lag level
             ChangeLagLevel();
         }
-
     }
 
     void ChangeLagLevel()
     {
 
+        pingQueue.RemoveAt(0);
+        pingQueue.Add(pingLevels[Random.Range(0, pingLevels.Length)]);
     }
 }
