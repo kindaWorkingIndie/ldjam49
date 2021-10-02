@@ -20,6 +20,8 @@ public class PingController : MonoBehaviour
 
     private static PingController _instance;
 
+    private int currentPingLevelIndex = -1;
+
     public static PingController Instance
     {
         get
@@ -40,8 +42,8 @@ public class PingController : MonoBehaviour
     {
         pingChangeIntervalStore = pingChangeInterval;
         pingQueue = new List<PingLevel>();
-        pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
-        pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
+        AddPingLevelToQueue();
+        AddPingLevelToQueue();
         realtimePing = lag.delay;
 
     }
@@ -70,9 +72,17 @@ public class PingController : MonoBehaviour
         realtimePing = realtimePing + pingIncrement;
     }
 
+    void AddPingLevelToQueue()
+    {
+        int newPingLevel = -1;
+        while ((newPingLevel=UnityEngine.Random.Range(0, pingLevels.Length))==currentPingLevelIndex);
+        currentPingLevelIndex = newPingLevel;
+        pingQueue.Add(pingLevels[currentPingLevelIndex]);
+    }
+
     void ChangeLagLevel()
     {
         pingQueue.RemoveAt(0);
-        pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
+        AddPingLevelToQueue();
     }
 }
