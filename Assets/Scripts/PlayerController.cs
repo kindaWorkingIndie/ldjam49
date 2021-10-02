@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -37,8 +35,6 @@ public class PlayerController : MonoBehaviour
             x = 0;
         }
         moveInput = new Vector2(x, y);
-
-
     }
 
     void FixedUpdate()
