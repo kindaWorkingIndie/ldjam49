@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float walkSpeed = 6;
+    public int maxIdleTicks = 5;
     private Vector2 moveInput;
     private Vector2 moveVelocity;
 
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
         vertical,
         horizontal
     }
+
+    private int idleCounter = 0;
 
     private moveDirection lastMoveDir = moveDirection.none;
 
@@ -66,6 +69,10 @@ public class PlayerController : MonoBehaviour
         x = lastMoveDir == moveDirection.horizontal ? x : 0;
         y = lastMoveDir == moveDirection.vertical ? y : 0;
 
+        if(x == 0 && y == 0)
+        {
+            lastMoveDir = moveDirection.none;
+        }
         moveInput = new Vector2(x, y);
         animator.SetBool("moving", moveInput != Vector2.zero);
         animator.SetFloat("horizontal", x < 0 ? -1 : 1);
@@ -75,9 +82,26 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = moveInput * walkSpeed;
 
-        GhostCommand cmd = new GhostCommand();
-        cmd.move = rb.position;
-        SendGhostInformation(cmd);
+        if(lastMoveDir != moveDirection.none)
+        {
+            GhostCommand cmd = new GhostCommand();
+            cmd.move = rb.position;
+            SendGhostInformation(cmd);
+        }
+        else
+        {
+            if(idleCounter >= maxIdleTicks)
+            {
+                idleCounter = 0;
+            }
+            else
+            {
+                ++idleCounter;
+                GhostCommand cmd = new GhostCommand();
+                cmd.move = rb.position;
+                SendGhostInformation(cmd);
+            }
+        }
     }
 
     void SendGhostInformation(GhostCommand cmd)

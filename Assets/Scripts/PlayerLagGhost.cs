@@ -5,14 +5,13 @@ using UnityEngine;
 public class PlayerLagGhost : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float walkSpeed = 6;
     public int neededBugs = 5;
 
     PingController pingController;
     private Queue<GhostCommand> commandQueue;
 
     private float lagDelay = 0;
-    private int interval = 30;
+    private int interval = 20;
     private Animator animator;
 
     private bool executeCommands = true;
@@ -32,7 +31,7 @@ public class PlayerLagGhost : MonoBehaviour
     void Update()
     {
         lagDelay -= Time.deltaTime;
-        interval = (interval - 1) % 30;
+        interval = (interval - 1) % 20;
 
         if (lagDelay < 0)
         {
@@ -88,8 +87,8 @@ public class PlayerLagGhost : MonoBehaviour
             Debug.Log(Input.GetAxisRaw("Vertical"));
             ++bugCounter;
 
-            Vector3 dir = new Vector3(Input.GetAxisRaw("Horizontal") * (2 * wall.bounds.size.x),
-                                        Input.GetAxisRaw("Vertical") * (2 * wall.bounds.size.y),
+            Vector3 dir = new Vector3(Input.GetAxisRaw("Horizontal") * (1.5f * wall.bounds.size.x),
+                                        Input.GetAxisRaw("Vertical") * (1.5f * wall.bounds.size.y),
                                         0);
             Vector3 newPos = transform.position + dir;
             rb.MovePosition(newPos);

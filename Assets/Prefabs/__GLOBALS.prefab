@@ -46,6 +46,7 @@ MonoBehaviour:
   spawnPosition: {x: -2.02, y: 0}
   playerPrefab: {fileID: 968190921611686447, guid: d1b50550a7b0d8545a4b2280fa97e20d, type: 3}
   ghostPrefab: {fileID: 4476806208887068602, guid: 34c020132a05e3944bbf962d1bb001fa, type: 3}
+  player: {fileID: 0}
 --- !u!1 &3565585642572818336
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,15 +91,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pingLevels:
-  - color: {r: 0.0036325455, g: 1, b: 0, a: 1}
+  - isBuggy: 0
+    color: {r: 0.0036325455, g: 1, b: 0, a: 1}
     delay: 0
-  - color: {r: 1, g: 0.96657693, b: 0, a: 1}
+  - isBuggy: 0
+    color: {r: 1, g: 0.96657693, b: 0, a: 1}
     delay: 100
-  - color: {r: 1, g: 0, b: 0, a: 1}
+  - isBuggy: 1
+    color: {r: 1, g: 0, b: 0, a: 1}
     delay: 300
   pingQueue: []
   pingChangeInterval: 5
-  pingChangeIntervalStore: 0
+  realtimePing: 0
+  realTimePingInterval: 2
 --- !u!1 &3565585642664310583
 GameObject:
   m_ObjectHideFlags: 0
