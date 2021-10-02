@@ -63,5 +63,11 @@ public class GameManager : MonoBehaviour
         ghost.transform.position = spawnPosition;
         player.transform.position = spawnPosition;
     }
+    public void SnapPlayerToGhost(Vector3 position)
+    {
+        Debug.Log("SNAP");
+        //player.GetComponent<BoxCollider2D>().enabled = false;
+        player.transform.position = position;
+    }
 
 }
