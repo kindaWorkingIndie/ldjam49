@@ -652,10 +652,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 474480149, guid: 698d39cca2f35384a823d3fbc70e5778, type: 3}
-      propertyPath: breakDelay
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 8766145760682824708, guid: 698d39cca2f35384a823d3fbc70e5778, type: 3}
       propertyPath: m_Name
       value: FallingPlate (1)

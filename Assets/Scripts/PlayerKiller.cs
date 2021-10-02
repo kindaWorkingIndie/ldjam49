@@ -12,11 +12,11 @@ public class PlayerKiller : MonoBehaviour
     {
         coll = GetComponent<Collider2D>();
     }
+
     void Update()
     {
 
     }
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
