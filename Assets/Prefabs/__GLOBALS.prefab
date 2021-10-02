@@ -86,7 +86,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a023fa2ae0d390c4e9740557749cc3f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pingLevels: []
+  pingLevels:
+  - color: {r: 0.0036325455, g: 1, b: 0, a: 1}
+    delay: 0
+  - color: {r: 1, g: 0.96657693, b: 0, a: 1}
+    delay: 100
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    delay: 300
   pingQueue: []
   pingChangeInterval: 5
   pingChangeIntervalStore: 0
