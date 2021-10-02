@@ -66,23 +66,22 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        x = lastMoveDir == moveDirection.horizontal ? x : 0;
-        y = lastMoveDir == moveDirection.vertical ? y : 0;
+        float _x = lastMoveDir == moveDirection.horizontal ? x : 0;
+        float _y = lastMoveDir == moveDirection.vertical ? y : 0;
 
-        if(x == 0 && y == 0)
+        if (_x == 0 && _y == 0)
         {
             lastMoveDir = moveDirection.none;
         }
         moveInput = new Vector2(x, y);
+        rb.velocity = moveInput * walkSpeed;
         animator.SetBool("moving", moveInput != Vector2.zero);
         animator.SetFloat("horizontal", x < 0 ? -1 : 1);
     }
 
     void FixedUpdate()
     {
-        rb.velocity = moveInput * walkSpeed;
-
-        if(lastMoveDir != moveDirection.none)
+        if (lastMoveDir != moveDirection.none)
         {
             GhostCommand cmd = new GhostCommand();
             cmd.move = rb.position;
@@ -92,7 +91,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if(idleCounter <= maxIdleTicks)
+            if (idleCounter <= maxIdleTicks)
             {
                 ++idleCounter;
                 GhostCommand cmd = new GhostCommand();
