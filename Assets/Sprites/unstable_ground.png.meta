@@ -1,19 +1,25 @@
 fileFormatVersion: 2
-guid: 05fe904c1f942d84982f7dafc9f5022d
+guid: 4cfe3fb134bb9ca4cbef1f8ff4cd09b7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3813957895643319183
-    second: doors_0
+      213: -1817131736854522387
+    second: unstable_ground_0
   - first:
-      213: -5869873724788712370
-    second: doors_1
+      213: -9155257211624512480
+    second: unstable_ground_1
   - first:
-      213: -7037842594108204779
-    second: doors_2
+      213: 5409752049787472996
+    second: unstable_ground_2
   - first:
-      213: -7794273071397281860
-    second: doors_3
+      213: -7203912589305811540
+    second: unstable_ground_3
+  - first:
+      213: 377748853047851322
+    second: unstable_ground_4
+  - first:
+      213: 8662604082125686456
+    second: unstable_ground_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -99,89 +105,179 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doors_0
+      name: unstable_ground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17432e94089121bc0800000000000000
-      internalID: -3813957895643319183
+      spriteID: de592ba105048c6e0800000000000000
+      internalID: -1817131736854522387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors_1
+      name: unstable_ground_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 024a9c9921ef1f080800000000000000
+      internalID: -9155257211624512480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unstable_ground_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4cd19d72f40a8ea0800000000000000
-      internalID: -5869873724788712370
+      spriteID: 46c0682c3dc431b40800000000000000
+      internalID: 5409752049787472996
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors_2
+      name: unstable_ground_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cad66710baf860c90800000000000000
+      internalID: -7203912589305811540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: unstable_ground_4
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 32
-        height: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5191111e27f845e90800000000000000
-      internalID: -7037842594108204779
+      spriteID: a397a3894980e3500800000000000000
+      internalID: 377748853047851322
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors_3
+      name: unstable_ground_5
       rect:
         serializedVersion: 2
         x: 160
         y: 0
         width: 32
-        height: 96
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbfd8f8ffed25d390800000000000000
-      internalID: -7794273071397281860
+      spriteID: 8b643f82480c73870800000000000000
+      internalID: 8662604082125686456
       vertices: []
       indices: 
       edges: []

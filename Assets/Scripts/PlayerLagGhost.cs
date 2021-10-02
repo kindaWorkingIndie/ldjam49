@@ -53,7 +53,7 @@ public class PlayerLagGhost : MonoBehaviour
             animator.SetBool("moving", commandQueue.Count != 0);
         }
 
-        if (commandQueue.Count != 0 && interval == 0 && executeCommands)
+        if(commandQueue.Count != 0 && interval == 0 && executeCommands)
         {
             commandQueue.Dequeue();
         }
@@ -61,7 +61,7 @@ public class PlayerLagGhost : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.gameObject.CompareTag("Projectile"))
+        if (coll.gameObject.CompareTag("Projectile"))
         {
             Destroy(coll.gameObject);
             GameManager.Instance.Die();
@@ -102,5 +102,10 @@ public class PlayerLagGhost : MonoBehaviour
             }
         }
         executeCommands = true;
+    }
+
+    public void ClearQueue()
+    {
+        commandQueue.Clear();
     }
 }
