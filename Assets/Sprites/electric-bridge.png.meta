@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 05fe904c1f942d84982f7dafc9f5022d
+guid: f1cea29178058854887285f92b98431a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3813957895643319183
-    second: doors_0
+      213: 2158698402623363174
+    second: electric-bridge_0
   - first:
-      213: -5869873724788712370
-    second: doors_1
+      213: 391574072938851411
+    second: electric-bridge_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,16 +93,64 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: doors_0
+      name: electric-bridge_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 64
+        y: 64
+        width: 192
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -111,19 +159,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17432e94089121bc0800000000000000
-      internalID: -3813957895643319183
+      spriteID: 668919982cc35fd10800000000000000
+      internalID: 2158698402623363174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: doors_1
+      name: electric-bridge_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 0
         y: 0
-        width: 64
+        width: 192
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -132,8 +180,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e4cd19d72f40a8ea0800000000000000
-      internalID: -5869873724788712370
+      spriteID: 35ce5c07b862f6500800000000000000
+      internalID: 391574072938851411
       vertices: []
       indices: 
       edges: []

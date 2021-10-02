@@ -6,6 +6,12 @@ public class PlateController : MonoBehaviour
 {
     public bool isActivated = false; 
 
+    public float activateTimeChangeInterval = 0; // Seconds
+
+    public Sprite ActivatedPlate;
+
+    public Sprite DeactivatedPlate;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,18 +21,41 @@ public class PlateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //decrement timer
+        if (activateTimeChangeInterval>0){
+            activateTimeChangeInterval -= Time.deltaTime;
+        }
         
+        //deactivate lever
+        if (activateTimeChangeInterval <= 0)
+        {
+            DeactivatePlate();
+        }
+    }
+
+    void ActivatePlate()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = ActivatedPlate;
+        isActivated = true;
+
+        //activate time
+        activateTimeChangeInterval = 5;
+    }
+
+    void DeactivatePlate()
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = DeactivatedPlate;
+        isActivated = false;
     }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        isActivated = true;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        ActivatePlate();
     }
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        isActivated = false;
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        //activate time
+        activateTimeChangeInterval = 1;
     }
 }
