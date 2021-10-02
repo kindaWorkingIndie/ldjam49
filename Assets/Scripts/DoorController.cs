@@ -8,6 +8,9 @@ public class DoorController : MonoBehaviour
 
     public PlateController PressurePlate;
 
+    public Sprite doorOpen;
+    public Sprite doorClose;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,18 +23,22 @@ public class DoorController : MonoBehaviour
         
         if (Lever.isActivated || PressurePlate.isActivated)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
             if (Lever.isActivated && PressurePlate.isActivated)
             {
                 // Open the door
-                gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+                gameObject.GetComponent<SpriteRenderer>().sprite = doorOpen;
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
             }else{
-                //Close the door
+                // Close the door
+                gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
+                gameObject.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
+            //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }
 }

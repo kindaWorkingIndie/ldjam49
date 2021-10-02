@@ -11,6 +11,10 @@ public class LeverController : MonoBehaviour
 
     public float activateTimeChangeInterval = 0; // Seconds
 
+    public Sprite ActivatedLever;
+
+    public Sprite DeactivatedLever;
+
     void Start()
     {
 
@@ -22,7 +26,6 @@ public class LeverController : MonoBehaviour
         //decrement timer
         if (activateTimeChangeInterval>0){
             activateTimeChangeInterval -= Time.deltaTime;
-            Debug.Log(Time.deltaTime);
         }
         
         //deactivate lever
@@ -40,7 +43,7 @@ public class LeverController : MonoBehaviour
 
     void ActivateLever()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        gameObject.GetComponent<SpriteRenderer>().sprite = ActivatedLever;
         isActivated = true;
 
         //activate time
@@ -49,7 +52,7 @@ public class LeverController : MonoBehaviour
 
     void DeactivateLever()
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        gameObject.GetComponent<SpriteRenderer>().sprite = DeactivatedLever;
         isActivated = false;
     }
 
