@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlateController : MonoBehaviour
+public class PlateController : IActivateable
 {
-    public bool isActivated = false; 
+
 
     public float activateTimeChangeInterval = 0; // Seconds
 
@@ -15,17 +15,18 @@ public class PlateController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //decrement timer
-        if (activateTimeChangeInterval>0){
+        if (activateTimeChangeInterval > 0)
+        {
             activateTimeChangeInterval -= Time.deltaTime;
         }
-        
+
         //deactivate lever
         if (activateTimeChangeInterval <= 0)
         {
@@ -58,4 +59,5 @@ public class PlateController : MonoBehaviour
         //activate time
         activateTimeChangeInterval = 1;
     }
+
 }

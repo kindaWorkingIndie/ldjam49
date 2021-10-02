@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeverController : MonoBehaviour
+public class LeverController : IActivateable
 {
-    // Start is called before the first frame update
-    public bool isActivated = false;
+
 
     private bool inReach = false;
 
@@ -24,17 +23,18 @@ public class LeverController : MonoBehaviour
     void Update()
     {
         //decrement timer
-        if (activateTimeChangeInterval>0){
+        if (activateTimeChangeInterval > 0)
+        {
             activateTimeChangeInterval -= Time.deltaTime;
         }
-        
+
         //deactivate lever
         if (activateTimeChangeInterval <= 0)
         {
             DeactivateLever();
         }
 
-        if (Input.GetKeyDown(KeyCode.E)&& inReach)
+        if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
             // activate or deactivate lever
             ActivateLever();
@@ -58,19 +58,19 @@ public class LeverController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.GetComponent<PlayerController>())
+        if (coll.GetComponent<PlayerController>() || coll.GetComponent<PlayerLagGhost>())
         {
             inReach = true;
-        } 
+        }
     }
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.GetComponent<PlayerController>())
+        if (coll.GetComponent<PlayerController>() || coll.GetComponent<PlayerLagGhost>())
         {
             inReach = false;
         }
-        
+
     }
 
 }
