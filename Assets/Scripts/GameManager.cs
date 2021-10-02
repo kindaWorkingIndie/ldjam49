@@ -34,18 +34,15 @@ public class GameManager : MonoBehaviour
 
     }
 
-
     void Initialize()
     {
         GameObject player = (GameObject)Instantiate(playerPrefab, spawnPosition, Quaternion.identity);
         GameObject ghost = (GameObject)Instantiate(ghostPrefab, spawnPosition, Quaternion.identity);
 
-
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController.ghost = ghost.GetComponent<PlayerLagGhost>();
         Camera.main.GetComponent<CameraController>().SetTarget(player.transform);
     }
-
 
     void OnDrawGizmosSelected()
     {
