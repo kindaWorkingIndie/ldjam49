@@ -7,15 +7,14 @@ public class PingController : MonoBehaviour
 {
 
     public PingLevel[] pingLevels;
-    public Text pingValue;
-    public Text nextPingValue;
+
 
     public List<PingLevel> pingQueue;
 
     public float pingChangeInterval = 10; // Seconds
     private float pingChangeIntervalStore;
 
-    private float realtimePing;
+    public float realtimePing;
     public float realTimePingInterval = 2; // Seconds
     private float nextTime = 0;
 
@@ -44,8 +43,7 @@ public class PingController : MonoBehaviour
         pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
         pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
         realtimePing = lag.delay;
-        pingValue.text = ((int)Math.Round(realtimePing)).ToString() + " ms";
-        nextPingValue.text = nextLag.delay.ToString() + " ms";
+
     }
 
     void Update()
@@ -57,9 +55,9 @@ public class PingController : MonoBehaviour
             ChangeLagLevel();
         }
 
-        if(Time.time >= nextTime)
+        if (Time.time >= nextTime)
         {
-            pingValue.text = ((int)Math.Round(realtimePing)).ToString() + " ms";
+
             nextTime += realTimePingInterval;
         }
     }
@@ -76,6 +74,5 @@ public class PingController : MonoBehaviour
     {
         pingQueue.RemoveAt(0);
         pingQueue.Add(pingLevels[UnityEngine.Random.Range(0, pingLevels.Length)]);
-        nextPingValue.text = nextLag.delay.ToString() + " ms";
     }
 }

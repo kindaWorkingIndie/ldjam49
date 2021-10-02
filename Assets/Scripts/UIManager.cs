@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
     public Image pingDisplayImage;
     public Image nextPingImage;
 
+    public Text pingValue;
+    public Text nextPingValue;
     void Start()
     {
 
@@ -20,5 +22,8 @@ public class UIManager : MonoBehaviour
         {
             nextPingImage.color = PingController.Instance.nextLag.color;
         }
+
+        pingValue.text = ((int)Mathf.Round(PingController.Instance.realtimePing)).ToString() + " ms";
+        nextPingValue.text = PingController.Instance.nextLag.delay.ToString() + " ms";
     }
 }

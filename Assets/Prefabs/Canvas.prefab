@@ -569,6 +569,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pingDisplayImage: {fileID: 8091811253359996990}
   nextPingImage: {fileID: 2038630677}
+  pingValue: {fileID: 1767569367244730451}
+  nextPingValue: {fileID: 7792335570414587573}
 --- !u!1 &8091811253359996976
 GameObject:
   m_ObjectHideFlags: 0
