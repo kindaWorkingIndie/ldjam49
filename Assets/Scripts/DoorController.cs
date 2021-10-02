@@ -6,21 +6,22 @@ public class DoorController : MonoBehaviour
 {
 
     public List<IActivateable> activators;
-
+    public List<SignalLamp> signalLamps;
 
     public Sprite doorOpen;
     public Sprite doorClose;
 
-    // Start is called before the first frame update
     void Start()
     {
-
+        if (activators.Count != signalLamps.Count)
+        {
+            Debug.LogError("Length of SignalLamps is not equal to the Activators Length");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        UpdateSignalLamps();
         if (isAnythingActivated())
         {
             //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
@@ -71,5 +72,22 @@ public class DoorController : MonoBehaviour
             }
         }
         return false;
+    }
+
+    void UpdateSignalLamps()
+    {
+        for (int index = 0; index < activators.Count; index++)
+        {
+            IActivateable activator = activators[index];
+            SignalLamp lamp = signalLamps[index];
+            if (activator.isActivated)
+            {
+                lamp.TurnOn();
+            }
+            else
+            {
+                lamp.TurnOff();
+            }
+        }
     }
 }

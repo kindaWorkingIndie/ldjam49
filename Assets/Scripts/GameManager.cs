@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private PlayerLagGhost ghost;
     public PlayerController player;
 
+    private Transform latestCheckpoint;
+
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -61,14 +63,28 @@ public class GameManager : MonoBehaviour
     public void Respawn()
     {
         ghost.ClearQueue();
-        ghost.transform.position = spawnPosition;
-        player.transform.position = spawnPosition;
+        if (latestCheckpoint == null)
+        {
+            ghost.transform.position = spawnPosition;
+            player.transform.position = spawnPosition;
+
+        }
+        else
+        {
+            ghost.transform.position = latestCheckpoint.position;
+            player.transform.position = latestCheckpoint.position;
+        }
     }
     public void SnapPlayerToGhost(Vector3 position)
     {
         Debug.Log("SNAP");
         //player.GetComponent<BoxCollider2D>().enabled = false;
         player.transform.position = position;
+    }
+
+    public void SetCheckpoint(Transform checkpoint)
+    {
+        latestCheckpoint = checkpoint;
     }
 
 }
