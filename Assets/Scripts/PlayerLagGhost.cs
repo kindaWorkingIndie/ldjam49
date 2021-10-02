@@ -54,14 +54,19 @@ public class PlayerLagGhost : MonoBehaviour
         }
     }
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("Ghost got it");
+            Destroy(coll.gameObject);
+            GameManager.Instance.Die();
+        }
+    }
+
     public void PushCommand(GhostCommand cmd)
     {
         if (commandQueue == null) return;
         commandQueue.Enqueue(cmd);
-    }
-
-    public void Move()
-    {
-
     }
 }
