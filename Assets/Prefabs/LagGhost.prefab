@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 5
+  neededBugs: 5
 --- !u!50 &237298097436890571
 Rigidbody2D:
   serializedVersion: 4
