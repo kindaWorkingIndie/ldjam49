@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4476806208887068604}
   - component: {fileID: 4476806208887068603}
+  - component: {fileID: 237298097436890571}
   m_Layer: 0
   m_Name: LagGhost
   m_TagString: Untagged
@@ -44,6 +45,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3fe469dc8e87264aab9db46f68667db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &237298097436890571
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476806208887068602}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 1
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &4476806210247787235
 GameObject:
   m_ObjectHideFlags: 0

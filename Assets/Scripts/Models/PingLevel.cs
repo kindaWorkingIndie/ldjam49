@@ -3,5 +3,5 @@ using UnityEngine;
 public class PingLevel
 {
     public Color color;
-    public int delay;
+    public float delay;
 }

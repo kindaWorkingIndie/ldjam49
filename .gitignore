@@ -61,4 +61,5 @@ crashlytics-build.properties
 # Custom
 *.sublime-project
 *.sublime-workspace
+UserSettings/
 
