@@ -12,7 +12,6 @@ public class ProjectileController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll)
     {
-        Debug.Log("HIT");
         if(!coll.collider.gameObject.CompareTag("Projectile"))
         {
             Destroy(gameObject);
