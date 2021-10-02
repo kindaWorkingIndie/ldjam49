@@ -56,7 +56,7 @@ public class PlayerLagGhost : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D coll)
     {
-        if(coll.gameObject.CompareTag("Projectile"))
+        if (coll.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("Ghost got it");
             Destroy(coll.gameObject);
@@ -68,5 +68,10 @@ public class PlayerLagGhost : MonoBehaviour
     {
         if (commandQueue == null) return;
         commandQueue.Enqueue(cmd);
+    }
+
+    public void ClearQueue()
+    {
+        commandQueue.Clear();
     }
 }
