@@ -31,7 +31,7 @@ public class PlayerLagGhost : MonoBehaviour
 
         if (lagDelay < 0)
         {
-            lagDelay = pingController.lag.delay / 1000; // Dirty seconds to ms convertion
+            lagDelay = pingController.realtimePing / 1000; // Dirty seconds to ms convertion
             if (commandQueue.Count != 0)
             {
                 Vector2 pos = commandQueue.Dequeue().move;

@@ -15,7 +15,7 @@ public class PingController : MonoBehaviour
     public float pingChangeInterval = 10; // Seconds
     private float pingChangeIntervalStore;
 
-    private float realtimePing;
+    public float realtimePing;
     public float realTimePingInterval = 2; // Seconds
     private float nextTime = 0;
 
