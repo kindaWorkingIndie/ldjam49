@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerKiller : MonoBehaviour
 {
     public bool killOnTrigger;
+    public DeathCause deathCause = DeathCause.Unknown;
 
     private Collider2D coll;
 
@@ -22,7 +23,7 @@ public class PlayerKiller : MonoBehaviour
     {
         if (other.GetComponent<PlayerLagGhost>() && this.enabled)
         {
-            GameManager.Instance.Die();
+            GameManager.Instance.Die(deathCause);
         }
     }
 }

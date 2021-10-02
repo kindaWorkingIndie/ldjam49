@@ -670,6 +670,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4527681146424453962, guid: cd5ba6516344d1947b12b063117a2cb7, type: 3}
+      propertyPath: deathCause
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4527681146424453963, guid: cd5ba6516344d1947b12b063117a2cb7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -940,6 +944,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2651608950661284332, guid: 2036381abf020304295636dfa4e371fc, type: 3}
+      propertyPath: deathCause
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284333, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_Name
       value: Laserbarrier_H_4
@@ -950,7 +958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.956
+      value: -7.001
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3146,6 +3154,10 @@ PrefabInstance:
     - target: {fileID: 7179962341757746465, guid: af42d88118adc48439b51b017ba67e30, type: 3}
       propertyPath: m_Name
       value: Laserbarrier_H_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7179962341757746466, guid: af42d88118adc48439b51b017ba67e30, type: 3}
+      propertyPath: deathCause
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: af42d88118adc48439b51b017ba67e30, type: 3}

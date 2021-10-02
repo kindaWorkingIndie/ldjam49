@@ -46,7 +46,7 @@ public class PlayerLagGhost : MonoBehaviour
                 }
                 else
                 {
-                    animator.SetFloat("horizontal", -1); 
+                    animator.SetFloat("horizontal", -1);
                 }
             }
             animator.SetBool("moving", commandQueue.Count != 0);
@@ -63,7 +63,7 @@ public class PlayerLagGhost : MonoBehaviour
         if (coll.gameObject.CompareTag("Projectile"))
         {
             Destroy(coll.gameObject);
-            GameManager.Instance.Die();
+            GameManager.Instance.Die(DeathCause.Electrocuted);
         }
 
         if (coll.gameObject.CompareTag("BugWall") && pingController.lag.isBuggy)

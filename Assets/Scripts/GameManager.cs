@@ -56,24 +56,30 @@ public class GameManager : MonoBehaviour
         Gizmos.DrawSphere(spawnPosition, 0.5f);
     }
 
-    public void Die()
+    public void Die(DeathCause cause)
     {
-        Respawn();
+        StartCoroutine(Respawn());
+
     }
-    public void Respawn()
+
+    IEnumerator Respawn()
     {
+        ghost.gameObject.SetActive(false);
+        player.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2);
         ghost.ClearQueue();
         if (latestCheckpoint == null)
         {
             ghost.transform.position = spawnPosition;
             player.transform.position = spawnPosition;
-
         }
         else
         {
             ghost.transform.position = latestCheckpoint.position;
             player.transform.position = latestCheckpoint.position;
         }
+        ghost.gameObject.SetActive(true);
+        player.gameObject.SetActive(true);
     }
     public void SnapPlayerToGhost(Vector3 position)
     {

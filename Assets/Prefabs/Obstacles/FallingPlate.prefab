@@ -161,3 +161,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killOnTrigger: 1
+  deathCause: 0
