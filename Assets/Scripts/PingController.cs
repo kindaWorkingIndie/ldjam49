@@ -55,12 +55,6 @@ public class PingController : MonoBehaviour
             pingChangeInterval = pingChangeIntervalStore;
             ChangeLagLevel();
         }
-
-        if (Time.time >= nextTime)
-        {
-
-            nextTime += realTimePingInterval;
-        }
     }
 
     void FixedUpdate()

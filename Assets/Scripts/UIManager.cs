@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 
     public Text pingValue;
     public Text nextPingValue;
+    private float pingNotifyTimeout = 0;
     void Start()
     {
 
@@ -23,7 +24,11 @@ public class UIManager : MonoBehaviour
             nextPingImage.color = PingController.Instance.nextLag.color;
         }
 
-        pingValue.text = ((int)Mathf.Round(PingController.Instance.realtimePing)).ToString() + " ms";
-        nextPingValue.text = PingController.Instance.nextLag.delay.ToString() + " ms";
+        if (Time.time >= pingNotifyTimeout)
+        {
+            pingNotifyTimeout += PingController.Instance.realTimePingInterval;
+            pingValue.text = ((int)Mathf.Round(PingController.Instance.realtimePing)).ToString() + " ms";
+            nextPingValue.text = PingController.Instance.nextLag.delay.ToString() + " ms";
+        }
     }
 }
