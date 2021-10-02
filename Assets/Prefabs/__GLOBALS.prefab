@@ -93,10 +93,10 @@ MonoBehaviour:
   pingLevels:
   - isBuggy: 0
     color: {r: 0.0036325455, g: 1, b: 0, a: 1}
-    delay: 1
+    delay: 10
   - isBuggy: 0
     color: {r: 1, g: 0.96657693, b: 0, a: 1}
-    delay: 100
+    delay: 150
   - isBuggy: 1
     color: {r: 1, g: 0, b: 0, a: 1}
     delay: 300
@@ -104,6 +104,8 @@ MonoBehaviour:
   pingChangeInterval: 5
   realtimePing: 0
   realTimePingInterval: 1
+  lagLevelTimeout: 3
+  isOnLevelTimeout: 0
 --- !u!1 &3565585642664310583
 GameObject:
   m_ObjectHideFlags: 0

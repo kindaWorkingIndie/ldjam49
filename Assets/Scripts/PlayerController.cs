@@ -87,14 +87,12 @@ public class PlayerController : MonoBehaviour
             GhostCommand cmd = new GhostCommand();
             cmd.move = rb.position;
             SendGhostInformation(cmd);
+
+            idleCounter = 0;
         }
         else
         {
-            if(idleCounter >= maxIdleTicks)
-            {
-                idleCounter = 0;
-            }
-            else
+            if(idleCounter <= maxIdleTicks)
             {
                 ++idleCounter;
                 GhostCommand cmd = new GhostCommand();

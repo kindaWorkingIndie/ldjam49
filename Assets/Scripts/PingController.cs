@@ -16,11 +16,14 @@ public class PingController : MonoBehaviour
 
     public float realtimePing;
     public float realTimePingInterval = 2; // Seconds
-    private float nextTime = 0;
 
     private static PingController _instance;
 
     private int currentPingLevelIndex = -1;
+
+    public float lagLevelTimeout = 3;
+    private float lagLevelTimeoutStore = 0;
+    public bool isOnLevelTimeout = false;
 
     public static PingController Instance
     {
@@ -45,20 +48,43 @@ public class PingController : MonoBehaviour
         AddPingLevelToQueue();
         AddPingLevelToQueue();
         realtimePing = lag.delay;
+
+        lagLevelTimeoutStore = lagLevelTimeout;
+        lagLevelTimeout = 0;
     }
 
     void Update()
     {
-        pingChangeInterval -= Time.deltaTime;
+        if(lagLevelTimeout >= 0)
+        {
+            // When reaching a new ping level, timeout on the level
+            lagLevelTimeout -= Time.deltaTime;
+        }
+        else
+        {
+            // When stalled long enough continue
+            pingChangeInterval -= Time.deltaTime;
+            isOnLevelTimeout = false;
+        }
+
+
         if (pingChangeInterval < 0)
         {
             pingChangeInterval = pingChangeIntervalStore;
             ChangeLagLevel();
+
+            lagLevelTimeout = lagLevelTimeoutStore;
+            isOnLevelTimeout = true;
         }
     }
 
     void FixedUpdate()
     {
+        if(isOnLevelTimeout)
+        {
+            return;
+        }
+
         float ratio = pingChangeIntervalStore / Time.fixedDeltaTime;
         float pingIncrement = (nextLag.delay - lag.delay) / ratio;
 

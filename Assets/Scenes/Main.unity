@@ -18196,6 +18196,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8302243957945963227, guid: bb84e30e427da9f4d902c654a8d38edb, type: 3}
+      propertyPath: onTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8302243957945963230, guid: bb84e30e427da9f4d902c654a8d38edb, type: 3}
       propertyPath: m_Name
       value: Bridge_room3
@@ -18210,8 +18214,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3565585642572818338, guid: a54ac2eedf00ad240b1fc5a0d5ad6e72, type: 3}
-      propertyPath: pingLevels.Array.data[2].isBuggy
-      value: 1
+      propertyPath: lagLevelTimeout
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565585642572818338, guid: a54ac2eedf00ad240b1fc5a0d5ad6e72, type: 3}
+      propertyPath: pingChangeInterval
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565585642572818338, guid: a54ac2eedf00ad240b1fc5a0d5ad6e72, type: 3}
+      propertyPath: pingLevels.Array.data[1].delay
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 3565585642572818338, guid: a54ac2eedf00ad240b1fc5a0d5ad6e72, type: 3}
+      propertyPath: pingLevels.Array.data[2].delay
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3565585642664310582, guid: a54ac2eedf00ad240b1fc5a0d5ad6e72, type: 3}
       propertyPath: m_RootOrder

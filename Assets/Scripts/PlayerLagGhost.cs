@@ -35,7 +35,7 @@ public class PlayerLagGhost : MonoBehaviour
 
         if (lagDelay < 0)
         {
-            lagDelay = pingController.realtimePing / 1000; // Dirty seconds to ms convertion
+            lagDelay = (pingController.realtimePing * 0.7f) / 1000; // Dirty seconds to ms convertion
             if (commandQueue.Count != 0 && executeCommands)
             {
                 Vector2 pos = commandQueue.Dequeue().move;
@@ -46,7 +46,7 @@ public class PlayerLagGhost : MonoBehaviour
                 }
                 else
                 {
-                    animator.SetFloat("horizontal", -1);
+                    animator.SetFloat("horizontal", -1); 
                 }
             }
             animator.SetBool("moving", commandQueue.Count != 0);
