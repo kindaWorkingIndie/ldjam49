@@ -40,8 +40,14 @@ public class DoorController : MonoBehaviour
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
+            gameObject.GetComponent<BoxCollider2D>().enabled = true;
             //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
+    }
+
+    public bool isOpen()
+    {
+        return isEverythingActivated();
     }
 
     bool isEverythingActivated()

@@ -18,6 +18,8 @@ public class PlayerLagGhost : MonoBehaviour
 
     private int bugCounter = 0;
 
+    private Vector3 lastLegalPosition;
+
 
     void Start()
     {
@@ -39,14 +41,19 @@ public class PlayerLagGhost : MonoBehaviour
             if (commandQueue.Count != 0 && executeCommands)
             {
                 Vector2 pos = commandQueue.Dequeue().move;
-                rb.MovePosition(pos);
-                if (pos.x > 0)
+
+                if(CheckIllegalMove(pos))
                 {
-                    animator.SetFloat("horizontal", 1);
-                }
-                else
-                {
-                    animator.SetFloat("horizontal", -1); 
+                    rb.MovePosition(pos);
+
+                    if (pos.x > 0)
+                    {
+                        animator.SetFloat("horizontal", 1);
+                    }
+                    else
+                    {
+                        animator.SetFloat("horizontal", -1); 
+                    }
                 }
             }
             animator.SetBool("moving", commandQueue.Count != 0);
@@ -70,6 +77,23 @@ public class PlayerLagGhost : MonoBehaviour
         {
             BugThrough(coll);
         }
+    }
+
+    private bool CheckIllegalMove(Vector3 pos)
+    {
+        Collider2D[] coll = Physics2D.OverlapCircleAll(pos, 0.08f);
+        foreach(Collider2D c in coll)
+        {
+            if(c.gameObject.GetComponent<DoorController>() != null)
+            {
+                GameManager.Instance.SnapPlayerToGhost(lastLegalPosition);
+                commandQueue.Clear();
+                return false;
+            }
+        }
+
+        lastLegalPosition = pos;
+        return true;
     }
 
     public void PushCommand(GhostCommand cmd)
