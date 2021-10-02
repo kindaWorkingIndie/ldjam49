@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     }
     public void Respawn()
     {
+        ghost.ClearQueue();
         ghost.transform.position = spawnPosition;
         player.transform.position = spawnPosition;
     }

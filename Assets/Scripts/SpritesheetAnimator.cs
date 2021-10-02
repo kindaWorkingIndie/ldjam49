@@ -30,10 +30,12 @@ public class SpritesheetAnimator : MonoBehaviour
             }
         }
     }
+
     public void Play()
     {
         isPlaying = true;
     }
+
     void NextFrame()
     {
         currentIndex++;

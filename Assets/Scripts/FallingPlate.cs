@@ -21,13 +21,13 @@ public class FallingPlate : MonoBehaviour
 
     void Update()
     {
-        if (isBreaking)
+        if (isBreaking && !isBroken)
         {
             breakDelay -= Time.deltaTime;
             if (breakDelay < 0)
             {
-                playerKiller.enabled = true;
                 spritesheetAnimator.Play();
+                playerKiller.enabled = true;
                 isBreaking = false;
                 isBroken = true;
             }

@@ -12,15 +12,15 @@ public class PlayerKiller : MonoBehaviour
     {
         coll = GetComponent<Collider2D>();
     }
+
     void Update()
     {
 
     }
 
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerLagGhost>())
+        if (other.GetComponent<PlayerLagGhost>() && this.enabled)
         {
             GameManager.Instance.Die();
         }
