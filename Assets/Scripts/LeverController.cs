@@ -5,11 +5,11 @@ using UnityEngine;
 public class LeverController : MonoBehaviour
 {
     // Start is called before the first frame update
-    public bool isActivated = false; 
+    public bool isActivated = false;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,12 +20,16 @@ public class LeverController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D coll)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+
+        if (Input.GetKeyDown(KeyCode.E) && coll.GetComponent<PlayerController>())
         {
             isActivated = !isActivated;
-            if (gameObject.GetComponent<SpriteRenderer>().color == Color.green){
+            if (gameObject.GetComponent<SpriteRenderer>().color == Color.green)
+            {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            }else{
+            }
+            else
+            {
                 gameObject.GetComponent<SpriteRenderer>().color = Color.green;
             }
         }
