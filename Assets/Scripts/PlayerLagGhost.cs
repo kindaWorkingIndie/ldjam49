@@ -56,6 +56,7 @@ public class PlayerLagGhost : MonoBehaviour
 
     public void PushCommand(GhostCommand cmd)
     {
+        if (commandQueue == null) return;
         commandQueue.Enqueue(cmd);
     }
 
