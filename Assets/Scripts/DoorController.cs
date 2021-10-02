@@ -23,9 +23,11 @@ public class DoorController : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
             if (Lever.isActivated && PressurePlate.isActivated)
             {
+                // Open the door
                 gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            }else{
+                //Close the door
             }
-
         }
         else
         {
