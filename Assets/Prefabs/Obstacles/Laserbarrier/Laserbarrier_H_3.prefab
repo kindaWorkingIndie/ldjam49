@@ -487,6 +487,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killOnTrigger: 1
+  deathCause: 1
 --- !u!114 &2128515203
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ MonoBehaviour:
   - Ouh!
   - Dead
   - You are dead.
-  spawnPosition: {x: -2.02, y: 0}
+  spawnPosition: {x: -0.94, y: -2.6}
   playerPrefab: {fileID: 968190921611686447, guid: d1b50550a7b0d8545a4b2280fa97e20d, type: 3}
   ghostPrefab: {fileID: 4476806208887068602, guid: 34c020132a05e3944bbf962d1bb001fa, type: 3}
   player: {fileID: 0}
