@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerLagGhost : MonoBehaviour
+public class PlayerLagGhost : PlayerCharacter
 {
     private Rigidbody2D rb;
     public int neededBugs = 5;
