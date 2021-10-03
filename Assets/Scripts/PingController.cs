@@ -36,6 +36,8 @@ public class PingController : MonoBehaviour
     public PingLevel lag { get { return pingQueue[0]; } }
     public PingLevel nextLag { get { return pingQueue.Count >= 2 ? pingQueue[1] : null; } }
 
+    public PingLevel thirdLag { get { return pingQueue.Count >= 3 ? pingQueue[2] : null; } }
+
     void Awake()
     {
         _instance = this;
@@ -45,6 +47,7 @@ public class PingController : MonoBehaviour
     {
         pingChangeIntervalStore = pingChangeInterval;
         pingQueue = new List<PingLevel>();
+        AddPingLevelToQueue();
         AddPingLevelToQueue();
         AddPingLevelToQueue();
         realtimePing = lag.delay;
