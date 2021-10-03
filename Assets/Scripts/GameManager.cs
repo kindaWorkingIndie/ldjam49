@@ -60,17 +60,29 @@ public class GameManager : MonoBehaviour
     public void Die(DeathCause cause)
     {
         UIManager.Instance.ShowScreenHint(deathMessages[Random.Range(0, deathMessages.Count)]);
-
+        player.animator.SetBool("dead", true);
+        ghost.animator.SetBool("dead", true);
+        if (cause == DeathCause.FallenInVoid)
+        {
+            player.animator.SetBool("fall_in_void", true);
+            ghost.animator.SetBool("fall_in_void", true);
+        }
         StartCoroutine(Respawn(cause));
     }
 
     IEnumerator Respawn(DeathCause cause)
     {
-
-
-
+        yield return new WaitForSeconds(1.5f);
         ghost.gameObject.SetActive(false);
         player.gameObject.SetActive(false);
+
+        if (cause == DeathCause.FallenInVoid)
+        {
+            player.animator.SetBool("fall_in_void", false);
+            ghost.animator.SetBool("fall_in_void", false);
+        }
+        player.animator.SetBool("dead", false);
+        ghost.animator.SetBool("dead", false);
         yield return new WaitForSeconds(2);
         ghost.ClearQueue();
         if (latestCheckpoint == null)
@@ -83,8 +95,9 @@ public class GameManager : MonoBehaviour
             ghost.transform.position = latestCheckpoint.position;
             player.transform.position = latestCheckpoint.position;
         }
-
+        player.GetComponent<PlayerCharacter>().ResetAfterAnimation();
         player.gameObject.SetActive(true);
+        ghost.GetComponent<PlayerCharacter>().ResetAfterAnimation();
         ghost.gameObject.SetActive(true);
 
     }
