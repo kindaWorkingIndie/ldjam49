@@ -2690,11 +2690,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 351771303480912016, guid: 696dc458e1c6fe644873f182e3e83dc1, type: 3}
       propertyPath: shootInterval
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 351771303480912016, guid: 696dc458e1c6fe644873f182e3e83dc1, type: 3}
       propertyPath: projectileSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 351771303480912018, guid: 696dc458e1c6fe644873f182e3e83dc1, type: 3}
       propertyPath: m_RootOrder

@@ -27,6 +27,7 @@ public class Checkpoint : MonoBehaviour
         if (other.GetComponent<PlayerLagGhost>())
         {
             GameManager.Instance.SetCheckpoint(transform);
+
         }
     }
 

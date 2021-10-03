@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 public class UIManager : MonoBehaviour
@@ -13,6 +12,10 @@ public class UIManager : MonoBehaviour
     [Header("Hints")]
     public GameObject hintPanel;
     public Text hintText;
+    public Text screenHintText;
+
+    public float screenHintTime = 2f;
+    private float screenHintTimeStore;
 
     private static UIManager _instance;
     public static UIManager Instance
@@ -26,8 +29,13 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
+        screenHintTimeStore = screenHintTime;
     }
 
+    void Start()
+    {
+        screenHintText.gameObject.SetActive(false);
+    }
     void Update()
     {
         if (PingController.Instance.pingQueue.Count == 0) return;
@@ -43,6 +51,21 @@ public class UIManager : MonoBehaviour
             pingValue.text = ((int)Mathf.Round(PingController.Instance.realtimePing)).ToString() + " ms";
             nextPingValue.text = PingController.Instance.nextLag.delay.ToString() + " ms";
         }
+
+        ScreenHintUpdate();
+    }
+
+    void ScreenHintUpdate()
+    {
+        if (screenHintText.gameObject.activeSelf)
+        {
+            screenHintTime -= Time.deltaTime;
+            if (screenHintTime < 0)
+            {
+                screenHintTime = screenHintTimeStore;
+                screenHintText.gameObject.SetActive(false);
+            }
+        }
     }
 
     public void ShowHint(string hint)
@@ -55,5 +78,11 @@ public class UIManager : MonoBehaviour
     {
         hintPanel.SetActive(false);
         hintText.text = "";
+    }
+
+    public void ShowScreenHint(string text)
+    {
+        screenHintText.gameObject.SetActive(true);
+        screenHintText.text = text;
     }
 }
