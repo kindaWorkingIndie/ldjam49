@@ -10,6 +10,7 @@ public class DoorController : MonoBehaviour
 
     public Sprite doorOpen;
     public Sprite doorClose;
+    private bool open = false;
 
     void Start()
     {
@@ -27,28 +28,38 @@ public class DoorController : MonoBehaviour
             //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
             if (isEverythingActivated())
             {
-                // Open the door
-                gameObject.GetComponent<SpriteRenderer>().sprite = doorOpen;
-                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                if(!open)
+                {
+                    gameObject.GetComponent<AudioSource>().Play();
+                    // Open the door
+                    gameObject.GetComponent<SpriteRenderer>().sprite = doorOpen;
+                    gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    open = true;
+                }
             }
             else
             {
-                // Close the door
-                gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
-                gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                if(open)
+                {
+                    // Close the door
+                    gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
+                    gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    open = false;
+                }
             }
         }
         else
         {
             gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
             gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            open = false;
             //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }
 
     public bool isOpen()
     {
-        return isEverythingActivated();
+        return open;
     }
 
     bool isEverythingActivated()
