@@ -52,6 +52,7 @@ public class TurretController : MonoBehaviour
 
     public void ShootSingle()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         Rigidbody2D clone;
         clone = Instantiate(projectile, transform.position, transform.rotation);
         clone.velocity = transform.TransformDirection(Vector3.left * projectileSpeed);
@@ -59,6 +60,7 @@ public class TurretController : MonoBehaviour
 
     public void ShootCardinalPoints()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         Rigidbody2D north;
         north = Instantiate(projectile, transform.position, transform.rotation);
         north.velocity = transform.TransformDirection(Vector3.up * projectileSpeed);
@@ -78,6 +80,7 @@ public class TurretController : MonoBehaviour
 
     public void ShootNorthSouth()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         Rigidbody2D north;
         north = Instantiate(projectile, transform.position, transform.rotation);
         north.velocity = transform.TransformDirection(Vector3.up * projectileSpeed);
@@ -89,6 +92,7 @@ public class TurretController : MonoBehaviour
 
     public void ShootEastWest()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         Rigidbody2D east;
         east = Instantiate(projectile, transform.position, transform.rotation);
         east.velocity = transform.TransformDirection(Vector3.right * projectileSpeed);

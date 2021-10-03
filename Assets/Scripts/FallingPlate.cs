@@ -39,6 +39,7 @@ public class FallingPlate : MonoBehaviour
     {
         if (other.GetComponent<PlayerLagGhost>() && !isBroken)
         {
+            gameObject.GetComponent<AudioSource>().Play();
             isBreaking = true;
         }
     }
