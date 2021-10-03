@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public List<string> deathMessages = new List<string>();
 
     public Vector2 spawnPosition;
     public GameObject playerPrefab;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     public void Die(DeathCause cause)
     {
+        UIManager.Instance.ShowScreenHint(deathMessages[Random.Range(0, deathMessages.Count)]);
         StartCoroutine(Respawn());
 
     }
