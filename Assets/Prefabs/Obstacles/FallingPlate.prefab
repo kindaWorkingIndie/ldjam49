@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89989150794e0314c828130b1e5ecdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  defaultAnimation:
   - {fileID: -1817131736854522387, guid: 4cfe3fb134bb9ca4cbef1f8ff4cd09b7, type: 3}
   - {fileID: -9155257211624512480, guid: 4cfe3fb134bb9ca4cbef1f8ff4cd09b7, type: 3}
   - {fileID: 5409752049787472996, guid: 4cfe3fb134bb9ca4cbef1f8ff4cd09b7, type: 3}
@@ -133,6 +133,7 @@ MonoBehaviour:
   - {fileID: 377748853047851322, guid: 4cfe3fb134bb9ca4cbef1f8ff4cd09b7, type: 3}
   - {fileID: 8662604082125686456, guid: 4cfe3fb134bb9ca4cbef1f8ff4cd09b7, type: 3}
   - {fileID: 0}
+  animations: []
   tickRate: 0.2
   loop: 0
   playOnAwake: 0

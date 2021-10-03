@@ -19,15 +19,15 @@ public class Checkpoint : MonoBehaviour
 
     void SetCheckpoint()
     {
-
+        GameManager.Instance.SetCheckpoint(this);
+        GetComponent<SpritesheetAnimator>().SetAnimation("activated");
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.GetComponent<PlayerLagGhost>())
         {
-            GameManager.Instance.SetCheckpoint(transform);
-
+            SetCheckpoint();
         }
     }
 

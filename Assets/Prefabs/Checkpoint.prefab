@@ -85,7 +85,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: -5588244012374682611, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -109,11 +109,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89989150794e0314c828130b1e5ecdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  defaultAnimation:
   - {fileID: -5588244012374682611, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
   - {fileID: 6612178416756646888, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
   - {fileID: 8484196705987056605, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
   - {fileID: -7283843876124404370, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
+  animations:
+  - name: activated
+    sprites:
+    - {fileID: -5269773527257775662, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
+    - {fileID: 578818272590451966, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
+    - {fileID: -5573889170522913239, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
+    - {fileID: 3883447168860151389, guid: 097f6e6f9fb515745bdac798feb97600, type: 3}
   tickRate: 0.3
   loop: 1
   playOnAwake: 1
