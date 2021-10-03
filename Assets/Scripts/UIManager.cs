@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 public class UIManager : MonoBehaviour
 {
     [Header("Ping")]
@@ -9,6 +10,7 @@ public class UIManager : MonoBehaviour
     public Text pingValue;
     public Text nextPingValue;
     public Text thirdPingValue;
+    public Text runTimer;
     private float pingNotifyTimeout = 0;
 
     [Header("Hints")]
@@ -60,6 +62,8 @@ public class UIManager : MonoBehaviour
             pingNotifyTimeout += PingController.Instance.realTimePingInterval;
             pingValue.text = ((int)Mathf.Round(PingController.Instance.realtimePing)).ToString() + " ms";
         }
+
+        runTimer.text = TimeSpan.FromSeconds(GameManager.Instance.GetCurrentRunTime()).ToString("mm':'ss':'fff");
 
         ScreenHintUpdate();
     }

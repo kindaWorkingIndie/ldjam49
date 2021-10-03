@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject ghostPrefab;
 
+    public float currentRunTimer = 0;
 
     private PlayerLagGhost ghost;
     public PlayerController player;
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
+        currentRunTimer += Time.deltaTime;
     }
 
     void Initialize()
@@ -129,6 +130,11 @@ public class GameManager : MonoBehaviour
         }
         latestCheckpoint = checkpoint;
         UIManager.Instance.ShowScreenHint("Checkpoint reached");
+    }
+
+    public float GetCurrentRunTime()
+    {
+        return currentRunTimer;
     }
 
 }
