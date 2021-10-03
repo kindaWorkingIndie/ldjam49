@@ -6464,7 +6464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  activateTimeChangeInterval: 0
+  activeTime: 2
   ActivatedPlate: {fileID: -2411837387816143469, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
   DeactivatedPlate: {fileID: 7128409872890522450, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
 --- !u!61 &1417434551
@@ -13901,7 +13901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  activateTimeChangeInterval: 0
+  activeTime: 1
   ActivatedPlate: {fileID: -2411837387816143469, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
   DeactivatedPlate: {fileID: 7128409872890522450, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
 --- !u!61 &1690034563
@@ -21934,7 +21934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  activateTimeChangeInterval: 0
+  activeTime: 1
   ActivatedPlate: {fileID: -2411837387816143469, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
   DeactivatedPlate: {fileID: 7128409872890522450, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
 --- !u!61 &1799568633

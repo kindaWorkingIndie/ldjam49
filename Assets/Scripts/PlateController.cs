@@ -6,7 +6,8 @@ public class PlateController : IActivateable
 {
 
 
-    public float activateTimeChangeInterval = 0; // Seconds
+    public float activeTime = 1;
+    private float activateTimeChangeInterval = 0; // Seconds
 
     public Sprite ActivatedPlate;
 
@@ -59,7 +60,7 @@ public class PlateController : IActivateable
     void OnTriggerExit2D(Collider2D coll)
     {
         //activate time
-        activateTimeChangeInterval = 1;
+        activateTimeChangeInterval = activeTime;
     }
 
 }
