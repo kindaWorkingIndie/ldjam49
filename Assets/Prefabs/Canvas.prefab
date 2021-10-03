@@ -863,6 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 6380305119944622167}
+  titleText: {fileID: 2060194682}
 --- !u!1 &1805956433
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -8,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     private bool _isPaused = false;
     public bool isPaused { get { return _isPaused; } }
     public GameObject visuals;
+
+    public Text titleText;
 
     private static PauseMenu _instance;
     public static PauseMenu Instance
@@ -48,6 +51,15 @@ public class PauseMenu : MonoBehaviour
         _isPaused = true;
         visuals.SetActive(_isPaused);
         Time.timeScale = 0;
+        titleText.text = "PAUSE";
+    }
+
+    public void EndGame()
+    {
+        _isPaused = true;
+        visuals.SetActive(_isPaused);
+        Time.timeScale = 0;
+        titleText.text = "CONGRATULATIONS";
     }
 
     public void UnpauseGame()

@@ -102,6 +102,14 @@ public class PlayerController : PlayerCharacter
         }
     }
 
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        if(coll.gameObject.CompareTag("Finish"))
+        {
+            PauseMenu.Instance.EndGame();
+        }
+    }
+
     void SendGhostInformation(GhostCommand cmd)
     {
         ghost.PushCommand(cmd);
