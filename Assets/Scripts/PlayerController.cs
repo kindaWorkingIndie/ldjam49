@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public PlayerLagGhost ghost;
-    private Animator animator;
+    [HideInInspector]
+    public Animator animator;
 
     private enum moveDirection
     {

@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     public float screenHintTime = 2f;
     private float screenHintTimeStore;
 
+
+
     private static UIManager _instance;
     public static UIManager Instance
     {
