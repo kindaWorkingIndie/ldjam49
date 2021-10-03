@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 4
-  maxIdleTicks: 60
+  maxIdleTicks: 50
   ghost: {fileID: 0}
   animator: {fileID: 0}
 --- !u!50 &968190921611686442
