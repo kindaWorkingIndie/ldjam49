@@ -62,11 +62,18 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.ShowScreenHint(deathMessages[Random.Range(0, deathMessages.Count)]);
         player.animator.SetBool("dead", true);
         ghost.animator.SetBool("dead", true);
-        if (cause == DeathCause.FallenInVoid)
+        switch (cause)
         {
-            player.animator.SetBool("fall_in_void", true);
-            ghost.animator.SetBool("fall_in_void", true);
+            case DeathCause.FallenInVoid:
+                player.animator.SetBool("fall_in_void", true);
+                ghost.animator.SetBool("fall_in_void", true);
+                break;
+            case DeathCause.Electrocuted:
+                player.animator.SetBool("electrocute", true);
+                ghost.animator.SetBool("electrocute", true);
+                break;
         }
+
         StartCoroutine(Respawn(cause));
     }
 
@@ -76,10 +83,16 @@ public class GameManager : MonoBehaviour
         ghost.gameObject.SetActive(false);
         player.gameObject.SetActive(false);
 
-        if (cause == DeathCause.FallenInVoid)
+        switch (cause)
         {
-            player.animator.SetBool("fall_in_void", false);
-            ghost.animator.SetBool("fall_in_void", false);
+            case DeathCause.FallenInVoid:
+                player.animator.SetBool("fall_in_void", false);
+                ghost.animator.SetBool("fall_in_void", false);
+                break;
+            case DeathCause.Electrocuted:
+                player.animator.SetBool("electrocute", false);
+                ghost.animator.SetBool("electrocute", false);
+                break;
         }
         player.animator.SetBool("dead", false);
         ghost.animator.SetBool("dead", false);

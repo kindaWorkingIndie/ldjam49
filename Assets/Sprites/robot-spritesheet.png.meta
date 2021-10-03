@@ -38,6 +38,18 @@ TextureImporter:
   - first:
       213: -7818140113088751446
     second: robot-spritesheet_11
+  - first:
+      213: 5204573891220063774
+    second: robot-spritesheet_12
+  - first:
+      213: 279219210470941734
+    second: robot-spritesheet_13
+  - first:
+      213: 6930666307939522915
+    second: robot-spritesheet_14
+  - first:
+      213: -859796782182033850
+    second: robot-spritesheet_15
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -422,6 +434,90 @@ TextureImporter:
       bones: []
       spriteID: aa8dc1b4df2608390800000000000000
       internalID: -7818140113088751446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16c179016c5a3840800000000000000
+      internalID: 5204573891220063774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 624e59e746cffd300800000000000000
+      internalID: 279219210470941734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369d08d694cae2060800000000000000
+      internalID: 6930666307939522915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: robot-spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646140bc1636114f0800000000000000
+      internalID: -859796782182033850
       vertices: []
       indices: 
       edges: []
