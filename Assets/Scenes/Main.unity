@@ -241,7 +241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128149, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: text
-      value: This door opens only if both, the lever and presure plate are activated.
+      value: This door opens only if both, the lever and pressure plate are activated.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
@@ -1948,7 +1948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128149, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: text
-      value: Don't fall of the bridge!
+      value: Don't fall off the bridge!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
@@ -2036,11 +2036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128145, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.3176
+      value: -3.326
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128145, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.352196
+      value: 7.393
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128145, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5096,7 +5096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128149, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: text
-      value: Whatch your feet!
+      value: Watch your feet! ...or the wheel?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
@@ -5224,7 +5224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128149, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: text
-      value: Lasers might burn you to death!
+      value: Lasers might burn you to death! But try it yourself.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
@@ -11257,7 +11257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473282718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 50.8276, y: -0.9021964, z: -77.844635}
+  m_LocalPosition: {x: 50.8276, y: -0.9021964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 837733128}
@@ -22037,7 +22037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 498522788771128149, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
       propertyPath: text
-      value: This will probably not kill you. It represents your life after death.
+      value: This thing here will probably not kill you. It s a checkpoint.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5594dc504260f4b49a66fbc65f7f0a24, type: 3}
