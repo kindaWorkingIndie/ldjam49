@@ -5,8 +5,10 @@ public class UIManager : MonoBehaviour
     [Header("Ping")]
     public Image pingDisplayImage;
     public Image nextPingImage;
+    public Image thirdPingImage;
     public Text pingValue;
     public Text nextPingValue;
+    public Text thirdPingValue;
     private float pingNotifyTimeout = 0;
 
     [Header("Hints")]
@@ -45,13 +47,18 @@ public class UIManager : MonoBehaviour
         if (PingController.Instance.nextLag != null)
         {
             nextPingImage.color = PingController.Instance.nextLag.color;
+            nextPingValue.text = PingController.Instance.nextLag.delay.ToString() + " ms";
+        }
+        if (PingController.Instance.thirdLag != null)
+        {
+            thirdPingImage.color = PingController.Instance.thirdLag.color;
+            thirdPingValue.text = PingController.Instance.thirdLag.delay.ToString() + " ms";
         }
 
         if (Time.time >= pingNotifyTimeout)
         {
             pingNotifyTimeout += PingController.Instance.realTimePingInterval;
             pingValue.text = ((int)Mathf.Round(PingController.Instance.realtimePing)).ToString() + " ms";
-            nextPingValue.text = PingController.Instance.nextLag.delay.ToString() + " ms";
         }
 
         ScreenHintUpdate();
