@@ -97,10 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89989150794e0314c828130b1e5ecdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  defaultAnimation:
   - {fileID: 2158698402623363174, guid: f1cea29178058854887285f92b98431a, type: 3}
   - {fileID: 391574072938851411, guid: f1cea29178058854887285f92b98431a, type: 3}
   tickRate: 0.2
+  loop: 1
+  playOnAwake: 1
 --- !u!114 &8302243957945963227
 MonoBehaviour:
   m_ObjectHideFlags: 0

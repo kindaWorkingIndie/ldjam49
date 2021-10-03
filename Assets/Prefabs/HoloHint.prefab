@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89989150794e0314c828130b1e5ecdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  defaultAnimation:
   - {fileID: -7086895963724960036, guid: 10d569baa7b97e1408e66c8176fb2dc7, type: 3}
   - {fileID: -6462930967781226627, guid: 10d569baa7b97e1408e66c8176fb2dc7, type: 3}
   - {fileID: -8509426383536224222, guid: 10d569baa7b97e1408e66c8176fb2dc7, type: 3}

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     private PlayerLagGhost ghost;
     public PlayerController player;
 
-    private Transform latestCheckpoint;
+    private Checkpoint latestCheckpoint;
 
     private static GameManager _instance;
     public static GameManager Instance
@@ -105,8 +105,8 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            ghost.transform.position = latestCheckpoint.position;
-            player.transform.position = latestCheckpoint.position;
+            ghost.transform.position = latestCheckpoint.transform.position;
+            player.transform.position = latestCheckpoint.transform.position;
         }
         player.GetComponent<PlayerCharacter>().ResetAfterAnimation();
         player.gameObject.SetActive(true);
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
         player.transform.position = position;
     }
 
-    public void SetCheckpoint(Transform checkpoint)
+    public void SetCheckpoint(Checkpoint checkpoint)
     {
         if (checkpoint == latestCheckpoint)
         {

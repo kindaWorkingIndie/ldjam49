@@ -3,7 +3,10 @@ using UnityEngine;
 public class SpritesheetAnimator : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public Sprite[] sprites;
+    public Sprite[] defaultAnimation;
+
+    public SpriteAnimation[] animations;
+    private SpriteAnimation currentAnimation;
     public float tickRate = 0.2f;
     public bool loop = true;
     public bool playOnAwake = true;
@@ -15,11 +18,13 @@ public class SpritesheetAnimator : MonoBehaviour
     {
         ticker = tickRate;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        SetAnimation();
         if (playOnAwake) Play();
     }
 
     void Update()
     {
+
         if (isPlaying)
         {
             ticker -= Time.deltaTime;
@@ -27,6 +32,23 @@ public class SpritesheetAnimator : MonoBehaviour
             {
                 NextFrame();
                 ticker = tickRate;
+            }
+        }
+    }
+
+    public void SetAnimation(string name = "")
+    {
+        if (name == string.Empty)
+        {
+            currentAnimation = new SpriteAnimation("", defaultAnimation);
+            return;
+        }
+        foreach (var anim in animations)
+        {
+            if (anim.name == name)
+            {
+                currentAnimation = anim;
+                break;
             }
         }
     }
@@ -40,16 +62,29 @@ public class SpritesheetAnimator : MonoBehaviour
     {
         currentIndex++;
 
-        if (currentIndex >= sprites.Length)
+        if (currentIndex >= currentAnimation.sprites.Length)
         {
             currentIndex = 0;
             if (!loop)
             {
                 isPlaying = false;
-                currentIndex = sprites.Length - 1;
+                currentIndex = currentAnimation.sprites.Length - 1;
             }
         }
 
-        spriteRenderer.sprite = sprites[currentIndex];
+        spriteRenderer.sprite = currentAnimation.sprites[currentIndex];
+    }
+}
+
+[System.Serializable]
+public class SpriteAnimation
+{
+    public string name;
+    public Sprite[] sprites;
+
+    public SpriteAnimation(string name, Sprite[] sprites)
+    {
+        this.name = name;
+        this.sprites = sprites;
     }
 }

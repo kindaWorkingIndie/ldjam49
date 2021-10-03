@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89989150794e0314c828130b1e5ecdd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprites:
+  defaultAnimation:
   - {fileID: -5816642994671486895, guid: 4ba99d429bdb5ea4aa1377aed5798dd6, type: 3}
   - {fileID: 2720290072527178061, guid: 4ba99d429bdb5ea4aa1377aed5798dd6, type: 3}
   - {fileID: -68809774801260167, guid: 4ba99d429bdb5ea4aa1377aed5798dd6, type: 3}
