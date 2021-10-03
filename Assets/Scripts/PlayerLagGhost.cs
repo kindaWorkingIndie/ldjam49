@@ -12,7 +12,8 @@ public class PlayerLagGhost : MonoBehaviour
 
     private float lagDelay = 0;
     private int interval = 20;
-    private Animator animator;
+    [HideInInspector]
+    public Animator animator;
 
     private bool executeCommands = true;
 

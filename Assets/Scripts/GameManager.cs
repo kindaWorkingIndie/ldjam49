@@ -60,12 +60,15 @@ public class GameManager : MonoBehaviour
     public void Die(DeathCause cause)
     {
         UIManager.Instance.ShowScreenHint(deathMessages[Random.Range(0, deathMessages.Count)]);
-        StartCoroutine(Respawn());
 
+        StartCoroutine(Respawn(cause));
     }
 
-    IEnumerator Respawn()
+    IEnumerator Respawn(DeathCause cause)
     {
+
+
+
         ghost.gameObject.SetActive(false);
         player.gameObject.SetActive(false);
         yield return new WaitForSeconds(2);
@@ -80,8 +83,10 @@ public class GameManager : MonoBehaviour
             ghost.transform.position = latestCheckpoint.position;
             player.transform.position = latestCheckpoint.position;
         }
-        ghost.gameObject.SetActive(true);
+
         player.gameObject.SetActive(true);
+        ghost.gameObject.SetActive(true);
+
     }
     public void SnapPlayerToGhost(Vector3 position)
     {
