@@ -90,6 +90,10 @@ public class GameManager : MonoBehaviour
 
     public void SetCheckpoint(Transform checkpoint)
     {
+        if (checkpoint == latestCheckpoint)
+        {
+            return;
+        }
         latestCheckpoint = checkpoint;
         UIManager.Instance.ShowScreenHint("Checkpoint reached");
     }
