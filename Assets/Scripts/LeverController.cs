@@ -29,7 +29,7 @@ public class LeverController : IActivateable
         }
 
         //deactivate lever
-        if (activateTimeChangeInterval <= 0)
+        if (activateTimeChangeInterval <= 0 && isActivated)
         {
             DeactivateLever();
         }
@@ -43,6 +43,7 @@ public class LeverController : IActivateable
 
     void ActivateLever()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<SpriteRenderer>().sprite = ActivatedLever;
         isActivated = true;
 
@@ -52,6 +53,7 @@ public class LeverController : IActivateable
 
     void DeactivateLever()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<SpriteRenderer>().sprite = DeactivatedLever;
         isActivated = false;
     }

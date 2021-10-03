@@ -28,7 +28,7 @@ public class PlateController : IActivateable
         }
 
         //deactivate lever
-        if (activateTimeChangeInterval <= 0)
+        if (activateTimeChangeInterval <= 0 && isActivated == true)
         {
             DeactivatePlate();
         }
@@ -36,6 +36,7 @@ public class PlateController : IActivateable
 
     void ActivatePlate()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<SpriteRenderer>().sprite = ActivatedPlate;
         isActivated = true;
 
@@ -45,6 +46,7 @@ public class PlateController : IActivateable
 
     void DeactivatePlate()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         gameObject.GetComponent<SpriteRenderer>().sprite = DeactivatedPlate;
         isActivated = false;
     }
