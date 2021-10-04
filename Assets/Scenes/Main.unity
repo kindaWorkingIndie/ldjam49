@@ -6511,7 +6511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417434548}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.47, y: -0.038, z: 0}
+  m_LocalPosition: {x: -11.49, y: -0.038, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1149599929}
@@ -6530,7 +6530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivated: 0
-  activeTime: 2
+  activeTime: 2.5
   ActivatedPlate: {fileID: -2411837387816143469, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
   DeactivatedPlate: {fileID: 7128409872890522450, guid: 8d999b42e6ee9ba49830455b0fa0f07d, type: 3}
 --- !u!61 &1417434551
