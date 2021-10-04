@@ -62,4 +62,5 @@ crashlytics-build.properties
 *.sublime-project
 *.sublime-workspace
 UserSettings/
+Release/
 

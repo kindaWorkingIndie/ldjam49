@@ -1,0 +1,7 @@
+Music:
+	https://opengameart.org/content/no-more-magic
+Sounds:
+	Door: https://freesound.org/people/ThunderQuads/sounds/467194/
+	Cracks: https://freesound.org/people/timbreknight/sounds/342546/
+	Turret: https://freesound.org/people/LDNsoundproduction/sounds/160903/
+	Switch: https://freesound.org/people/joedeshon/sounds/119415/
