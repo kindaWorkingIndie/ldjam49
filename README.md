@@ -1,7 +1,7 @@
 # Ludum Dare 49
 
 ## Topic selection
-Unstable can be interpreted in many ways. Since we are from Germany and our country is famous and notorious for their unstable network, we decided to make network instability and lag the main theme of our game.
+Unstable can be interpreted in many ways. Since we are from Germany and our country is famous and notorious for their unstable network, we decided to make network instability and lag the main theme of our game. Every gamer knows the problem of bad pings and their effects, but can you possibly turn them to your advantage to make the game work at all?
 
 ## This is L.A.G.
 L.A.G. is a mix of roguelike and obstacle course where the goal is to move through the level with constantly changing ping. It's not so much about steering the controllable protagonist past the obstacles and puzzles and getting him to the finish line, but more about his - ping influenced - lagging real mind.
