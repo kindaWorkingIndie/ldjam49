@@ -11,7 +11,7 @@ public class PlayerLagGhost : PlayerCharacter
     private Queue<GhostCommand> commandQueue;
 
     private float lagDelay = 0;
-    private int interval = 20;
+    private int interval = 40;
     [HideInInspector]
     public Animator animator;
 
@@ -34,11 +34,11 @@ public class PlayerLagGhost : PlayerCharacter
     void Update()
     {
         lagDelay -= Time.deltaTime;
-        interval = (interval - 1) % 20;
+        interval = (interval - 1) % 40;
 
         if (lagDelay < 0)
         {
-            lagDelay = (pingController.realtimePing * 0.7f) / 1000; // Dirty seconds to ms convertion
+            lagDelay = (pingController.realtimePing * 0.5f) / 1000; // Dirty seconds to ms convertion
             if (commandQueue.Count != 0 && executeCommands)
             {
                 Vector2 pos = commandQueue.Dequeue().move;
@@ -59,6 +59,7 @@ public class PlayerLagGhost : PlayerCharacter
             animator.SetBool("moving", commandQueue.Count != 0);
         }
 
+        // Manually forget some Steps from the queue to make it look laggy
         if (commandQueue.Count != 0 && interval == 0 && executeCommands)
         {
             commandQueue.Dequeue();

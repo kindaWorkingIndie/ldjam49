@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
-    public int shootInterval = 1;
+    public float shootInterval = 1;
     public int projectileSpeed = 5;
 
     public enum gunMode {
