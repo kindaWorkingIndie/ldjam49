@@ -11,8 +11,8 @@ If you make it through a timed door, for example, but the limping real ghost doe
 *Secret tip: Sometimes it can make sense to use high lag spikes to your advantage to cross obstacles or solve puzzles. Maybe you can even get through some levels only under worst conditions?*
 
 <details>
-  <summary>Attention: Solution! Read only if you can't get any further at all in the last room</summary>
-  When the ping is red, run against a wall that is not too far away from the next room. Since the ping is so bad, you may glitch through the wall.
+  <summary><b>Attention: Solution! Read only if you can't get any further at all in the last room</summary>
+  When the ping is red, run against a wall that is not too far away from the next room. Since the ping is so bad, you may glitch through the wall.</b>
 </details>
 
 Now try yourself: Control the lag and learn to cope with the unstable computer network.
