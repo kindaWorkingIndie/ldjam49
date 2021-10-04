@@ -43,4 +43,10 @@ public class FallingPlate : MonoBehaviour
             isBreaking = true;
         }
     }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(255, 0, 0, .2f);
+        Gizmos.DrawCube(transform.position, Vector2.one);
+    }
 }
