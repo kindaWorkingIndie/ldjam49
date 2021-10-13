@@ -10,16 +10,17 @@ public class PlateController : IActivateable
     private float activateTimeChangeInterval = 0; // Seconds
 
     public Sprite ActivatedPlate;
-
     public Sprite DeactivatedPlate;
 
-    // Start is called before the first frame update
+    private AudioSource audioSource;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //decrement timer
@@ -37,8 +38,8 @@ public class PlateController : IActivateable
 
     void ActivatePlate()
     {
-        gameObject.GetComponent<AudioSource>().Play();
-        gameObject.GetComponent<SpriteRenderer>().sprite = ActivatedPlate;
+        audioSource.Play();
+        spriteRenderer.sprite = ActivatedPlate;
         isActivated = true;
 
         //activate time
@@ -47,8 +48,8 @@ public class PlateController : IActivateable
 
     void DeactivatePlate()
     {
-        gameObject.GetComponent<AudioSource>().Play();
-        gameObject.GetComponent<SpriteRenderer>().sprite = DeactivatedPlate;
+        audioSource.Play();
+        spriteRenderer.sprite = DeactivatedPlate;
         isActivated = false;
     }
 

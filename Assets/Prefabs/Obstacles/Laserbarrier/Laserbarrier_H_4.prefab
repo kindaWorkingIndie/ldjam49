@@ -339,7 +339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onTime: 2
   offTime: 2
-  ticker: 0
+  isOn: 1
   lasers:
   - {fileID: 2651608950156602114}
   - {fileID: 2651608951553844096}

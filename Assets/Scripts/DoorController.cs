@@ -12,12 +12,20 @@ public class DoorController : MonoBehaviour
     public Sprite doorClose;
     private bool open = false;
 
+    private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
+    private BoxCollider2D boxCollider;
+
     void Start()
     {
         if (activators.Count != signalLamps.Count)
         {
             Debug.LogError("Length of SignalLamps is not equal to the Activators Length");
         }
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -25,35 +33,33 @@ public class DoorController : MonoBehaviour
         UpdateSignalLamps();
         if (isAnythingActivated())
         {
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.yellow;
             if (isEverythingActivated())
             {
-                if(!open)
+                if (!open)
                 {
-                    gameObject.GetComponent<AudioSource>().Play();
+                    audioSource.Play();
                     // Open the door
-                    gameObject.GetComponent<SpriteRenderer>().sprite = doorOpen;
-                    gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                    spriteRenderer.sprite = doorOpen;
+                    boxCollider.enabled = false;
                     open = true;
                 }
             }
             else
             {
-                if(open)
+                if (open)
                 {
                     // Close the door
-                    gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
-                    gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                    spriteRenderer.sprite = doorClose;
+                    boxCollider.enabled = true;
                     open = false;
                 }
             }
         }
         else
         {
-            gameObject.GetComponent<SpriteRenderer>().sprite = doorClose;
-            gameObject.GetComponent<BoxCollider2D>().enabled = true;
+            spriteRenderer.sprite = doorClose;
+            boxCollider.enabled = true;
             open = false;
-            //gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }
 

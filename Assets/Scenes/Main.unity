@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -341,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7250004
+      value: 1.7250004
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1528,13 +1528,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2036061684}
     m_Modifications:
+    - target: {fileID: 1035928526, guid: 2036381abf020304295636dfa4e371fc, type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284333, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_Name
       value: Laserbarrier_H_4 (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1542,7 +1546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.7250004
+      value: 5.7250004
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2925,13 +2929,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2036061684}
     m_Modifications:
+    - target: {fileID: 1035928526, guid: 2036381abf020304295636dfa4e371fc, type: 3}
+      propertyPath: isOn
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284333, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_Name
       value: Laserbarrier_H_4
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2939,7 +2947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.7250004
+      value: 4.7250004
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13087,7 +13095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7250004
+      value: 0.7250004
       objectReference: {fileID: 0}
     - target: {fileID: 2651608950661284334, guid: 2036381abf020304295636dfa4e371fc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23579,9 +23587,9 @@ Transform:
   m_LocalPosition: {x: 17.494999, y: -5.7250004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 277435119}
   - {fileID: 46517549}
   - {fileID: 1922794126}
-  - {fileID: 277435119}
   - {fileID: 1598814464}
   - {fileID: 1362439590}
   m_Father: {fileID: 0}

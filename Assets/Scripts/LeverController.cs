@@ -5,13 +5,11 @@ using UnityEngine;
 public class LeverController : IActivateable
 {
 
-
     private bool inReach = false;
 
     public float activateTimeChangeInterval = 0; // Seconds
 
     public Sprite ActivatedLever;
-
     public Sprite DeactivatedLever;
 
     void Start()
@@ -19,7 +17,6 @@ public class LeverController : IActivateable
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         //decrement timer
@@ -72,7 +69,6 @@ public class LeverController : IActivateable
         {
             inReach = false;
         }
-
     }
 
 }

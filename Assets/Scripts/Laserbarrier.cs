@@ -6,8 +6,9 @@ public class Laserbarrier : MonoBehaviour
 {
     public float onTime = 2;
     public float offTime = 2;
-    private bool isOn = true;
-    public float ticker;
+    public bool isOn = true;
+
+    private float ticker;
 
     private Collider2D col;
 
@@ -19,6 +20,7 @@ public class Laserbarrier : MonoBehaviour
         col = GetComponent<Collider2D>();
         col = GetComponent<Collider2D>();
         col.isTrigger = true;
+        ToggleLaser(isOn);
     }
 
     void Update()
@@ -28,13 +30,16 @@ public class Laserbarrier : MonoBehaviour
         {
             ticker = isOn ? offTime : onTime;
             isOn = !isOn;
-            col.enabled = isOn;
-            foreach (GameObject laser in lasers)
-            {
-                laser.SetActive(isOn);
-            }
+            ToggleLaser(isOn);
+        }
+    }
 
-
+    void ToggleLaser(bool on)
+    {
+        col.enabled = on;
+        foreach (GameObject laser in lasers)
+        {
+            laser.SetActive(on);
         }
     }
 }

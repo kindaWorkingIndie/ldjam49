@@ -14,6 +14,7 @@ public class SpritesheetAnimator : MonoBehaviour
     private float ticker;
     private int currentIndex;
     private bool isPlaying;
+
     void Start()
     {
         ticker = tickRate;
