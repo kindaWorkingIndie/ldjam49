@@ -17,6 +17,7 @@ public class PlateController : IActivateable
 
     void Start()
     {
+        Debug.LogError("PlateController is deprecated. Please use Activatable instead on " + gameObject.name);
         audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

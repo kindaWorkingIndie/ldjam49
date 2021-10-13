@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
 
-    public List<IActivateable> activators;
+    public List<Activatable> activators;
     public List<SignalLamp> signalLamps;
 
     public Sprite doorOpen;
@@ -70,7 +70,7 @@ public class DoorController : MonoBehaviour
 
     bool isEverythingActivated()
     {
-        foreach (IActivateable activator in activators)
+        foreach (Activatable activator in activators)
         {
             if (!activator.isActivated)
             {
@@ -81,7 +81,7 @@ public class DoorController : MonoBehaviour
     }
     bool isAnythingActivated()
     {
-        foreach (IActivateable activator in activators)
+        foreach (Activatable activator in activators)
         {
             if (activator.isActivated)
             {
@@ -95,7 +95,7 @@ public class DoorController : MonoBehaviour
     {
         for (int index = 0; index < activators.Count; index++)
         {
-            IActivateable activator = activators[index];
+            Activatable activator = activators[index];
             SignalLamp lamp = signalLamps[index];
             if (activator.isActivated)
             {

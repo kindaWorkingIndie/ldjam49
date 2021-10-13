@@ -12,9 +12,15 @@ public class LeverController : IActivateable
     public Sprite ActivatedLever;
     public Sprite DeactivatedLever;
 
+    private AudioSource audioSource;
+    private SpriteRenderer spriteRenderer;
+
     void Start()
     {
 
+        Debug.LogError("LeverController is deprecated. Please use Activatable instead on " + gameObject.name);
+        audioSource = GetComponent<AudioSource>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -33,15 +39,14 @@ public class LeverController : IActivateable
 
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
-            // activate or deactivate lever
             ActivateLever();
         }
     }
 
     void ActivateLever()
     {
-        gameObject.GetComponent<AudioSource>().Play();
-        gameObject.GetComponent<SpriteRenderer>().sprite = ActivatedLever;
+        audioSource.Play();
+        spriteRenderer.sprite = ActivatedLever;
         isActivated = true;
 
         //activate time
@@ -50,8 +55,8 @@ public class LeverController : IActivateable
 
     void DeactivateLever()
     {
-        gameObject.GetComponent<AudioSource>().Play();
-        gameObject.GetComponent<SpriteRenderer>().sprite = DeactivatedLever;
+        audioSource.Play();
+        spriteRenderer.sprite = DeactivatedLever;
         isActivated = false;
     }
 
